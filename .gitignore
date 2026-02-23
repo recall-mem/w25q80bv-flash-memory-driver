@@ -1,0 +1,14 @@
+
+# Folders
+
+DebugConfig
+Listings
+Objects
+RTE
+
+# Files
+
+*.scvd
+*.recall
+*.uvoptx
+*.uvprojx

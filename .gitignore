@@ -1,14 +1,11 @@
 
-# Folders
 
+## Keil uVision
 DebugConfig/
 Listings/
 Objects/
 RTE/
-
-# Files
-
 *.scvd
-*.recall
+*.uvguix.*
 *.uvoptx
-*.uvprojx
+#*.uvprojx

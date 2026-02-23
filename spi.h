@@ -5,7 +5,7 @@
 #include <stdint.h>
 
 
-#define W25Q_MEMORY_END				0x00100000u
+
 
 
 typedef enum {

@@ -5,6 +5,9 @@
 #include <stdint.h>
 
 
+#define W25Q_MEMORY_END				0x00100000u
+
+
 typedef enum {
 		SPI_BRDIV2 = 0,
 		SPI_BRDIV4,

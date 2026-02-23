@@ -30,16 +30,14 @@ int main()
 	spi1_init(&conf);
 	
 	
-	uint32_t addr = 0x00000000u;
-	uint8_t read_counter = 0;
+	uint32_t addr = 0;
+	uint16_t read_counter = 0;
 	
-	while(1)	{
+	while(addr < W25Q_MEMORY_END)	{
 		w25q_read(addr, buffer, 0x2000);
 		read_counter++;
 		addr += 0x2000;
 	}
-
-	while(1) {}; // Hang here
 
 		
 	return 0;

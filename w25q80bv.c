@@ -2,6 +2,14 @@
 #include "w25q80bv_instructions.h"
 
 
+#define ROUGH_DELAY(x) do { for(volatile int i=0; i<x; i++); } while(0)
+
+// USER CONFIGURATION
+// Add your header and change ROUGH_DELAY(us) to your delay function.
+// The delay function must have microsecond precision!
+// Function must accept microseconds as argument.
+#define W25Q_DELAY_US(us)	ROUGH_DELAY(us)
+
 #define DUMMY_BYTE			(uint8_t)0xFF
 
 
@@ -38,7 +46,7 @@ uint8_t w25q_release_power_down()
 	
 	cs_high();
 	
-	for (volatile int i=0; i<5000; i++);	//Rough delay swap with systick!
+	W25Q_DELAY_US(10);	// 3 us required
 	
 	return ID;
 }
@@ -48,17 +56,17 @@ void w25q_reset()
 {
 	cs_low();
 	
-	(void)spi1_transmit(0x66); // Enable reset
+	(void)spi1_transmit(0x66);	// Enable reset
 		
 	cs_high();
 	
 	cs_low();
 	
-	(void)spi1_transmit(0x99); // Reset device
+	(void)spi1_transmit(0x99);	// Reset device
 
 	cs_high();
 
-	for (volatile int i=0; i<3000; i++);	//Rough delay swap with systick!
+	W25Q_DELAY_US(30);	// 30us required
 }
 
 

@@ -17,6 +17,8 @@
 #define W25Q80BV_CMD_BLOCK_ERASE64K				0xD8u
 #define W25Q80BV_CMD_CHIP_ERASE						0xC7u	// OR 0x60u same thing			
 #define W25Q80BV_CMD_POWER_DOWN						0xB9u
+#define W25Q80BV_CMD_ENABLE_RESET					0x66u
+#define W25Q80BV_CMD_RESET_DEVICE					0x99u
 #define W25Q80BV_CMD_CONTIN_READ_MODE			0xFFu
 /*	These instructions left
 	Erase / Program Suspend 75h

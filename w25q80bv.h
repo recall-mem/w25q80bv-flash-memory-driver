@@ -5,8 +5,8 @@
 #include "spi.h"
 #include <stdint.h>
 
-#define W25Q_MEMORY_END							0x000FFF00h
-#define W25Q80BV_MAX_PROGRAM_SIZE		0x100u 
+#define W25Q_MEMORY_END              0x000FFF00h
+#define W25Q80BV_MAX_PROGRAM_SIZE    0x100u 
 
 #define W25Q80BV_ADDR_SEC_REG1			(uint32_t)0x001000	// to 0x0010FF
 #define W25Q80BV_ADDR_SEC_REG2			(uint32_t)0x002000	// to 0x0020FF

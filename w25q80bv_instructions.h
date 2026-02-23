@@ -56,6 +56,4 @@
 */
 
 
-// #define W25Q80BV_CMD_
-
 #endif

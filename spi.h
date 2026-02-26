@@ -5,7 +5,8 @@
 #include <stdint.h>
 
 
-
+#define GPIOX					GPIOA
+#define CSS_PIN				4
 
 
 typedef enum {
@@ -15,7 +16,8 @@ typedef enum {
 		SPI_BRDIV16,
 		SPI_BRDIV32,
 		SPI_BRDIV64,
-		SPI_BRDIV128
+		SPI_BRDIV128,
+		SPI_BRDIV256
 } SPI_BRATEDIVn;
 
 typedef enum {
@@ -39,14 +41,25 @@ typedef struct {
 
 void spi1_init(SPI_CONFIG *conf);
 
-inline void cs_high();
-inline void cs_low();
-
 uint8_t spi1_transmit(uint8_t data);
 void spi1_transmit_msg(uint8_t *buffer, uint32_t size);
 
 void spi1_clear_ovr();
 
+inline void cs_high()
+{
+	// Change it if you use different pin
+	// PA4 HIGH
+	GPIOX->BSRR = (1 << CSS_PIN);
+}
+
+
+inline void cs_low()
+{
+	// Change it if you use different pin
+	// PA4 LOW
+	GPIOX->BSRR = (1 << (CSS_PIN + 16));
+}
 
 
 #endif

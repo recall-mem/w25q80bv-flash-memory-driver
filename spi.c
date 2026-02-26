@@ -1,10 +1,6 @@
 #include "spi.h"
 
 
-#define GPIOX					GPIOA
-#define CSS_PIN				4
-
-
 void spi1_init(SPI_CONFIG *conf)	// Init SPI1 as master
 {
 	cs_high(); // Set CS pin to idle
@@ -20,22 +16,6 @@ void spi1_init(SPI_CONFIG *conf)	// Init SPI1 as master
 	SPI1->CR1 |= (conf->bitorder << 7);			// LSB FIRST bit
 
 	SPI1->CR1 |= (1 << 6);	// SPE
-}
-
-
-void cs_high()
-{
-	// Change it if you use different pin
-	// PA4 HIGH
-	GPIOX->BSRR = (1 << CSS_PIN);
-}
-
-
-void cs_low()
-{
-	// Change it if you use different pin
-	// PA4 LOW
-	GPIOX->BSRR = (1 << (CSS_PIN + 16));
 }
 
 

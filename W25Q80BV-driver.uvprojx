@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\fatfs-version16;..\W25Q80BV-driver</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -385,11 +385,6 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
               <FileName>spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\spi.c</FilePath>
@@ -398,6 +393,16 @@
               <FileName>w25q80bv.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\w25q80bv.c</FilePath>
+            </File>
+            <File>
+              <FileName>SysTick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SysTick.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -423,6 +428,11 @@
               <FileName>w25q80bv_instructions.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\w25q80bv_instructions.h</FilePath>
+            </File>
+            <File>
+              <FileName>SysTick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SysTick.h</FilePath>
             </File>
           </Files>
         </Group>
